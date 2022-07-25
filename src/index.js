@@ -49,3 +49,62 @@ if (animItems.length > 0) {
         animOnScroll();
     }, 150);
 }
+
+
+document.getElementById('contacts_btn').addEventListener('click', () =>{
+    let reg = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/
+    let address = document.getElementById('formEmail').value
+    if (document.getElementById('formName').value === "" || document.getElementById('formEmail').value === "" || document.getElementById('myText').value === "" || reg.test(address) === false) {
+        if (document.getElementById('formName').value === "") {
+            document.getElementById('formName').classList.add('bg-red-200')
+            document.getElementById('formName').classList.add('hover:bg-red-200')
+            document.getElementById('formName').classList.add('focus:bg-red-200')
+        } else {
+            document.getElementById('formName').classList.remove('bg-red-200')
+            document.getElementById('formName').classList.remove('hover:bg-red-200')
+            document.getElementById('formName').classList.remove('focus:bg-red-200')
+        }
+        if (document.getElementById('formEmail').value === "") {
+            document.getElementById('formEmail').classList.add('bg-red-200')
+            document.getElementById('formEmail').classList.add('hover:bg-red-200')
+            document.getElementById('formEmail').classList.add('focus:bg-red-200')
+        } else {
+            document.getElementById('formEmail').classList.remove('bg-red-200')
+            document.getElementById('formEmail').classList.remove('hover:bg-red-200')
+            document.getElementById('formEmail').classList.remove('focus:bg-red-200')
+        }
+        if (reg.test(address) === false) {
+            document.getElementById('formEmail').classList.add('bg-red-200')
+            document.getElementById('formEmail').classList.add('hover:bg-red-200')
+            document.getElementById('formEmail').classList.add('focus:bg-red-200')
+        } else {
+            document.getElementById('formEmail').classList.remove('bg-red-200')
+            document.getElementById('formEmail').classList.remove('hover:bg-red-200')
+            document.getElementById('formEmail').classList.remove('focus:bg-red-200')
+        }
+        if (document.getElementById('myText').value === "") {
+            document.getElementById('myText').classList.add('bg-red-200')
+            document.getElementById('myText').classList.add('hover:bg-red-200')
+            document.getElementById('myText').classList.add('focus:bg-red-200')
+        } else {
+            document.getElementById('myText').classList.remove('bg-red-200')
+            document.getElementById('myText').classList.remove('hover:bg-red-200')
+            document.getElementById('myText').classList.remove('focus:bg-red-200')
+        }
+    } else {
+        document.getElementById('formName').classList.remove('bg-red-200')
+        document.getElementById('formName').classList.remove('hover:bg-red-200')
+        document.getElementById('formName').classList.remove('focus:bg-red-200')
+        document.getElementById('formEmail').classList.remove('bg-red-200')
+        document.getElementById('formEmail').classList.remove('hover:bg-red-200')
+        document.getElementById('formEmail').classList.remove('focus:bg-red-200')
+        document.getElementById('myText').classList.remove('bg-red-200')
+        document.getElementById('myText').classList.remove('hover:bg-red-200')
+        document.getElementById('myText').classList.remove('focus:bg-red-200')
+
+        window.location.href = "mailto:llnata@rambler.ru"
+            + "?cc=llnata@rambler.ru"
+            + "&subject=Вопрос от пользователя " + encodeURIComponent(document.getElementById('formName').value)
+            + "&body=" + encodeURIComponent(document.getElementById('myText').value);
+    }
+})
