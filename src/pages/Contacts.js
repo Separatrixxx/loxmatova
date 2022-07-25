@@ -19,7 +19,7 @@ function Contacts () {
                             <a href="https://t.me/+79107125791" target="_blank" rel="noreferrer"  className="flex flex-row mx-7 text-3xl lg:text-4xl cursor-pointer text-neutral-800 hover:text-violet transition-colors duration-300 ease-in-out">
                                 <FaTelegramPlane />
                             </a>
-                            <a href="https://wa.me/89107125791" target="_blank" rel="noreferrer"  className="flex flex-row mx-7 text-3xl lg:text-4xl cursor-pointer text-neutral-800 hover:text-violet transition-colors duration-300 ease-in-out">
+                            <a href="https://wa.me/+79107125791" target="_blank" rel="noreferrer"  className="flex flex-row mx-7 text-3xl lg:text-4xl cursor-pointer text-neutral-800 hover:text-violet transition-colors duration-300 ease-in-out">
                                 <FaWhatsapp />
                             </a>
                         </div>
