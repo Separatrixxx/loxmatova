@@ -18,10 +18,10 @@ function Header() {
                 </h1>
             </div>
             <div className="flex flex-col lg:flex-row justify-center w-1/2 items-start lg:items-center">
-                <a id="link_1" href="/" className="text-lg lg:text-base py-2 lg:py-0 mt-3 lg:mt-0 hover:text-neutral-300 transition-colors duration-300 text-neutral-400 mx-5 lg:mx-9 select-none hidden lg:flex">О себе</a>
-                <a id="link_2" href="/" className="text-lg lg:text-base py-2 lg:py-0 mt-3 lg:mt-0 hover:text-neutral-300 transition-colors duration-300 text-neutral-400 mx-5 lg:mx-9 select-none hidden lg:flex">Портфолио</a>
-                <a id="link_3" href="/" className="text-lg lg:text-base py-2 lg:py-0 mt-3 lg:mt-0 hover:text-neutral-300 transition-colors duration-300 text-neutral-400 mx-5 lg:mx-9 select-none hidden lg:flex">Прайс-лист</a>
-                <a id="link_4" href="/" className="text-lg lg:text-base py-2 lg:py-0 mt-3 lg:mt-0 hover:text-neutral-300 transition-colors duration-300 text-neutral-400 mx-5 lg:mx-9 select-none hidden lg:flex mb-3 lg:mb-0">Контакты</a>
+                <a id="link_1" href="/about" className="text-lg lg:text-base py-2 lg:py-0 mt-3 lg:mt-0 hover:text-neutral-300 transition-colors duration-300 text-neutral-400 mx-5 lg:mx-9 select-none hidden lg:flex">О себе</a>
+                <a id="link_2" href="/portfolio" className="text-lg lg:text-base py-2 lg:py-0 mt-3 lg:mt-0 hover:text-neutral-300 transition-colors duration-300 text-neutral-400 mx-5 lg:mx-9 select-none hidden lg:flex">Портфолио</a>
+                <a id="link_3" href="/price" className="text-lg lg:text-base py-2 lg:py-0 mt-3 lg:mt-0 hover:text-neutral-300 transition-colors duration-300 text-neutral-400 mx-5 lg:mx-9 select-none hidden lg:flex">Прайс-лист</a>
+                <a id="link_4" href="/contacts" className="text-lg lg:text-base py-2 lg:py-0 mt-3 lg:mt-0 hover:text-neutral-300 transition-colors duration-300 text-neutral-400 mx-5 lg:mx-9 select-none hidden lg:flex mb-3 lg:mb-0">Контакты</a>
             </div>
             <div className="flex justify-center p-5 w-1/4 hidden lg:block">
 

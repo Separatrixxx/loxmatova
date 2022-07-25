@@ -5,7 +5,7 @@ import ScrollIntoView from "react-scroll-into-view";
 
 function Footer() {
     return(
-        <div className="flex flex-col items-center w-full bg-neutral-800 mt-10">
+        <div className="flex flex-col items-center w-full bg-neutral-800">
             <div className="mt-7">
                 <ScrollIntoView selector="#first_div">
                     <img className="w-6 select-none cursor-pointer hover:animate-spin-slow" draggable="false" src={logo} alt="logo_icon" />
