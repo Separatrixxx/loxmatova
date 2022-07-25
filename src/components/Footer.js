@@ -12,7 +12,7 @@ function Footer() {
                 </ScrollIntoView>
             </div>
             <h1 className="text-neutral-400 text-a mt-5">Семейный фотограф Наталья LOхматова</h1>
-            <h1 className="text-neutral-400 text-xs mt-3">© LOхматова, 2021 г. Все права защищены</h1>
+            <h1 className="text-neutral-400 text-xs mt-3">© LOхматова, 2022 г. Все права защищены</h1>
             <p id="spr" className="text-neutral-400 text-xs mt-10 m-7">by <span className="font-bold">separatrix</span></p>
         </div>
     );
