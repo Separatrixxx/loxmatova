@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ContactForm from '../components/ContactForm'
-import {FaTelegramPlane, FaWhatsapp, FaVk} from "react-icons/fa";
+import {FaTelegramPlane, FaWhatsapp, FaVk, FaHeart} from "react-icons/fa";
 
 function Contacts () {
     return (
@@ -27,7 +27,13 @@ function Contacts () {
                         <ContactForm />
                     </div>
                 </div>
-                <div id="contacts_photo" className="w-1/2 h-screen bg-neutral-800 bg-cover bg-center bg-no-repeat hidden lg:block"></div>
+                <div className="flex flex-col items-center justify-center w-full lg:w-1/2 h-48 lg:h-screen bg-violet">
+                    <h1 className="text-white text-xl lg:text-5xl font-bold">Спасибо, что выбрали меня!</h1>
+                    <div className="mt-5 lg:mt-10">
+                        <h1 className="text-white text-4xl lg:text-7xl font-bold absolute "><FaHeart /></h1>
+                        <h1 className="text-white text-4xl lg:text-7xl font-bold animate-ping"><FaHeart /></h1>
+                    </div>
+                </div>
             </div>
             <Header />
             <Footer />
