@@ -108,3 +108,17 @@ document.getElementById('contacts_btn').addEventListener('click', () =>{
             + "&body=" + encodeURIComponent(document.getElementById('myText').value);
     }
 })
+
+
+function setActiveContacts() {
+    document.querySelector('.contacts_1').classList.add('_active')
+    document.querySelector('.contacts_2').classList.add('_active')
+    document.querySelector('.contacts_3').classList.add('_active')
+    document.querySelector('.contacts_4').classList.add('_active')
+    document.querySelector('.contacts_5').classList.add('_active')
+    document.querySelector('.contacts_6').classList.add('_active')
+    document.querySelector('.contacts_7').classList.add('_active')
+    document.querySelector('.contacts_8').classList.add('_active')
+}
+
+setTimeout(setActiveContacts, 200);
