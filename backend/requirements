@@ -1,0 +1,10 @@
+fastapi
+pydantic
+uvicorn
+python-multipart
+pytest
+sqlalchemy
+psycopg2
+sqlalchemy_utils
+minio
+shutil
