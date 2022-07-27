@@ -25,9 +25,14 @@ class Albums(Base):
 
 class Photos(Base):
     __tablename__ = 'photos'
-    id = Column(Integer, primary_key=True)
+    id = Column(String(100), primary_key=True)
     album_id = Column(Integer,ForeignKey('albums.id'))
     album = relationship('Albums')
+
+
+
+
+
 
 
 
