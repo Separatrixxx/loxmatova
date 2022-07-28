@@ -3,8 +3,8 @@ pydantic
 uvicorn
 python-multipart
 pytest
-sqlalchemy
+pymongo
 psycopg2
-sqlalchemy_utils
+pymongo
 minio
 shutil

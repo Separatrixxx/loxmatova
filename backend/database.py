@@ -1,33 +1,50 @@
-from sqlalchemy import create_engine,String,Column,Integer,ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import  sessionmaker,relationship
-from settings import setting
-from sqlalchemy_utils import database_exists, create_database
-
-
-database_url = f"postgresql+psycopg2://postgres:{setting.database_password}@localhost/{setting.database_name}"
-engine=create_engine(database_url)
-Session = sessionmaker(engine)
-Base = declarative_base()
-
-if not database_exists(engine.url):
-    create_database(engine.url)
-
-
-class Albums(Base):
-    __tablename__ = 'albums'
-    id = Column(Integer, primary_key=True)
-    name = Column(String(100), nullable=False)
-    photos = relationship('Photos')
+from pymongo import MongoClient
 
 
 
 
-class Photos(Base):
-    __tablename__ = 'photos'
-    id = Column(String(100), primary_key=True)
-    album_id = Column(Integer,ForeignKey('albums.id'))
-    album = relationship('Albums')
+class Data:
+    def __init__(self):
+        self.client = MongoClient()
+        self.db = self.client.photos
+        self.collection = self.db.photos
+
+
+    def get_all_albums(self):
+
+        res = self.collection.find_one()
+
+        return res
+
+
+    def get_albums_by_name(self,album_name:str):
+        res = self.collection.find_one({"album": album_name})
+
+        return res
+
+
+
+    def create_album(self,album_name:str):
+        album = {
+            'album':album_name,
+            'photos':[]
+        }
+
+        self.collection.insert_one(album)
+
+    def insert_photos(self,album_name:str,photo_name:str):
+        self.collection.update_one({'album':album_name},{'$push': {'photos':photo_name}})
+
+
+
+
+    def delete_photo(self,album_name:str,photo_name:str):
+        self.collection.update_one({'album':album_name},{'$pull': {'photos':photo_name}})
+
+
+
+    def delete_albums(self,album_name:str):
+        self.collection.delete_one({'album':album_name})
 
 
 
@@ -37,11 +54,4 @@ class Photos(Base):
 
 
 
-Base.metadata.create_all(engine)
 
-def get_session():
-    session = Session()
-    try:
-        yield session
-    finally:
-        session.close()
