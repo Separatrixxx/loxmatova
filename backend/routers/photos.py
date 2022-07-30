@@ -35,17 +35,4 @@ async def upload_photo(album_name:str,files: List[UploadFile],Database = Depends
 
 
 
-@router.get('/albums',tags=['albums'])
-async def get_all_albums(Database = Depends(Database)):
-    return  Database.get_all_albums()
 
-
-@router.get('/albums{count}',tags=['albums'])
-async def get_albums(count:int,Database = Depends(Database)):
-    return Database.get_all_albums()[:count]
-
-
-@router.delete('/albums',tags=['albums'])
-async def delete_album(album_name,Database = Depends(Database),Data = Depends(Data_minio)):
-    Database.delete_albums(album_name)
-    Data.delete_album(album_name)

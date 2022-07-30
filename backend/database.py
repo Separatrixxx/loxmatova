@@ -19,7 +19,7 @@ class Database:
 
 
     def get_albums_by_name(self,album_name:str):
-        res = self.collection.find_one({"album": album_name})
+        res = self.collection.find_one({"album": album_name},{'_id':0})
 
         return res
 
@@ -53,7 +53,7 @@ class Database:
 
 
 a= Database()
-z=a.get_all_albums()
+z=a.get_albums_by_name('lastalbum')
 print(z)
 
 
