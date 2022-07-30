@@ -15,5 +15,13 @@ class Data_minio:
         self.client.remove_object(bucket, file_uuid)
 
 
+    def delete_album(self,bucket):
+        objects_to_delete = self.client.list_objects(bucket)
+        for obj in objects_to_delete:
+            self.client.remove_object(bucket,obj.object_name)
 
-Data = Data_minio()
+        self.client.remove_bucket(bucket)
+
+
+
+

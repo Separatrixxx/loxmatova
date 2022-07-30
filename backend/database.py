@@ -1,20 +1,21 @@
 from pymongo import MongoClient
+from datetime import datetime
 
 
 
-
-class Data:
+class Database:
     def __init__(self):
         self.client = MongoClient()
         self.db = self.client.photos
         self.collection = self.db.photos
 
 
-    def get_all_albums(self):
-
-        res = self.collection.find_one()
-
-        return res
+    def get_all_albums(self) -> list:
+        A=[]
+        res = self.collection.find({},{'_id':0,'photos':0,'created':0})
+        for i in res:
+            A.append(i['album'])
+        return A
 
 
     def get_albums_by_name(self,album_name:str):
@@ -27,6 +28,7 @@ class Data:
     def create_album(self,album_name:str):
         album = {
             'album':album_name,
+            'created': datetime.now(),
             'photos':[]
         }
 
@@ -50,8 +52,9 @@ class Data:
 
 
 
-
-
+a= Database()
+z=a.get_all_albums()
+print(z)
 
 
 
