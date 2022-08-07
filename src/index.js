@@ -51,107 +51,110 @@ if (animItems.length > 0) {
 }
 
 
-document.getElementById('contacts_btn').addEventListener('click', () =>{
-    let reg = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/
-    let address = document.getElementById('formEmail').value
-    if (document.getElementById('formName').value === "" || document.getElementById('formEmail').value === "" || document.getElementById('myText').value === "" || reg.test(address) === false) {
-        if (document.getElementById('formName').value === "") {
-            document.getElementById('formName').classList.add('bg-red-200')
-            document.getElementById('formName').classList.add('hover:bg-red-200')
-            document.getElementById('formName').classList.add('focus:bg-red-200')
-            document.getElementById('formName').classList.remove('bg-neutral-200')
-            document.getElementById('formName').classList.remove('hover:bg-neutral-300')
-            document.getElementById('formName').classList.remove('focus:bg-neutral-300')
+if (document.getElementById('contacts_btn') !== null) {
+    document.getElementById('contacts_btn').addEventListener('click', () => {
+        let reg = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/
+        let address = document.getElementById('formEmail').value
+        if (document.getElementById('formName').value === "" || document.getElementById('formEmail').value === "" || document.getElementById('myText').value === "" || reg.test(address) === false) {
+            if (document.getElementById('formName').value === "") {
+                document.getElementById('formName').classList.add('bg-red-200')
+                document.getElementById('formName').classList.add('hover:bg-red-200')
+                document.getElementById('formName').classList.add('focus:bg-red-200')
+                document.getElementById('formName').classList.remove('bg-neutral-200')
+                document.getElementById('formName').classList.remove('hover:bg-neutral-300')
+                document.getElementById('formName').classList.remove('focus:bg-neutral-300')
+            } else {
+                document.getElementById('formName').classList.remove('bg-red-200')
+                document.getElementById('formName').classList.remove('hover:bg-red-200')
+                document.getElementById('formName').classList.remove('focus:bg-red-200')
+                document.getElementById('formName').classList.add('bg-neutral-200')
+                document.getElementById('formName').classList.add('hover:bg-neutral-300')
+                document.getElementById('formName').classList.add('focus:bg-neutral-300')
+            }
+            if (document.getElementById('formEmail').value === "") {
+                document.getElementById('formEmail').classList.add('bg-red-200')
+                document.getElementById('formEmail').classList.add('hover:bg-red-200')
+                document.getElementById('formEmail').classList.add('focus:bg-red-200')
+                document.getElementById('formEmail').classList.remove('bg-neutral-200')
+                document.getElementById('formEmail').classList.remove('hover:bg-neutral-300')
+                document.getElementById('formEmail').classList.remove('focus:bg-neutral-300')
+            } else {
+                document.getElementById('formEmail').classList.remove('bg-red-200')
+                document.getElementById('formEmail').classList.remove('hover:bg-red-200')
+                document.getElementById('formEmail').classList.remove('focus:bg-red-200')
+                document.getElementById('formEmail').classList.add('bg-neutral-200')
+                document.getElementById('formEmail').classList.add('hover:bg-neutral-300')
+                document.getElementById('formEmail').classList.add('focus:bg-neutral-300')
+            }
+            if (reg.test(address) === false) {
+                document.getElementById('formEmail').classList.add('bg-red-200')
+                document.getElementById('formEmail').classList.add('hover:bg-red-200')
+                document.getElementById('formEmail').classList.add('focus:bg-red-200')
+                document.getElementById('formEmail').classList.remove('bg-neutral-200')
+                document.getElementById('formEmail').classList.remove('hover:bg-neutral-300')
+                document.getElementById('formEmail').classList.remove('focus:bg-neutral-300')
+            } else {
+                document.getElementById('formEmail').classList.remove('bg-red-200')
+                document.getElementById('formEmail').classList.remove('hover:bg-red-200')
+                document.getElementById('formEmail').classList.remove('focus:bg-red-200')
+                document.getElementById('formEmail').classList.add('bg-neutral-200')
+                document.getElementById('formEmail').classList.add('hover:bg-neutral-300')
+                document.getElementById('formEmail').classList.add('focus:bg-neutral-300')
+            }
+            if (document.getElementById('myText').value === "") {
+                document.getElementById('myText').classList.add('bg-red-200')
+                document.getElementById('myText').classList.add('hover:bg-red-200')
+                document.getElementById('myText').classList.add('focus:bg-red-200')
+                document.getElementById('myText').classList.remove('bg-neutral-200')
+                document.getElementById('myText').classList.remove('hover:bg-neutral-300')
+                document.getElementById('myText').classList.remove('focus:bg-neutral-300')
+            } else {
+                document.getElementById('myText').classList.remove('bg-red-200')
+                document.getElementById('myText').classList.remove('hover:bg-red-200')
+                document.getElementById('myText').classList.remove('focus:bg-red-200')
+                document.getElementById('myText').classList.add('bg-neutral-200')
+                document.getElementById('myText').classList.add('hover:bg-neutral-300')
+                document.getElementById('myText').classList.add('focus:bg-neutral-300')
+            }
         } else {
             document.getElementById('formName').classList.remove('bg-red-200')
             document.getElementById('formName').classList.remove('hover:bg-red-200')
             document.getElementById('formName').classList.remove('focus:bg-red-200')
-            document.getElementById('formName').classList.add('bg-neutral-200')
-            document.getElementById('formName').classList.add('hover:bg-neutral-300')
-            document.getElementById('formName').classList.add('focus:bg-neutral-300')
-        }
-        if (document.getElementById('formEmail').value === "") {
-            document.getElementById('formEmail').classList.add('bg-red-200')
-            document.getElementById('formEmail').classList.add('hover:bg-red-200')
-            document.getElementById('formEmail').classList.add('focus:bg-red-200')
-            document.getElementById('formEmail').classList.remove('bg-neutral-200')
-            document.getElementById('formEmail').classList.remove('hover:bg-neutral-300')
-            document.getElementById('formEmail').classList.remove('focus:bg-neutral-300')
-        } else {
             document.getElementById('formEmail').classList.remove('bg-red-200')
             document.getElementById('formEmail').classList.remove('hover:bg-red-200')
             document.getElementById('formEmail').classList.remove('focus:bg-red-200')
-            document.getElementById('formEmail').classList.add('bg-neutral-200')
-            document.getElementById('formEmail').classList.add('hover:bg-neutral-300')
-            document.getElementById('formEmail').classList.add('focus:bg-neutral-300')
-        }
-        if (reg.test(address) === false) {
-            document.getElementById('formEmail').classList.add('bg-red-200')
-            document.getElementById('formEmail').classList.add('hover:bg-red-200')
-            document.getElementById('formEmail').classList.add('focus:bg-red-200')
-            document.getElementById('formEmail').classList.remove('bg-neutral-200')
-            document.getElementById('formEmail').classList.remove('hover:bg-neutral-300')
-            document.getElementById('formEmail').classList.remove('focus:bg-neutral-300')
-        } else {
-            document.getElementById('formEmail').classList.remove('bg-red-200')
-            document.getElementById('formEmail').classList.remove('hover:bg-red-200')
-            document.getElementById('formEmail').classList.remove('focus:bg-red-200')
-            document.getElementById('formEmail').classList.add('bg-neutral-200')
-            document.getElementById('formEmail').classList.add('hover:bg-neutral-300')
-            document.getElementById('formEmail').classList.add('focus:bg-neutral-300')
-        }
-        if (document.getElementById('myText').value === "") {
-            document.getElementById('myText').classList.add('bg-red-200')
-            document.getElementById('myText').classList.add('hover:bg-red-200')
-            document.getElementById('myText').classList.add('focus:bg-red-200')
-            document.getElementById('myText').classList.remove('bg-neutral-200')
-            document.getElementById('myText').classList.remove('hover:bg-neutral-300')
-            document.getElementById('myText').classList.remove('focus:bg-neutral-300')
-        } else {
             document.getElementById('myText').classList.remove('bg-red-200')
             document.getElementById('myText').classList.remove('hover:bg-red-200')
             document.getElementById('myText').classList.remove('focus:bg-red-200')
+            document.getElementById('formName').classList.add('bg-neutral-200')
+            document.getElementById('formName').classList.add('hover:bg-neutral-300')
+            document.getElementById('formName').classList.add('focus:bg-neutral-300')
+            document.getElementById('formEmail').classList.add('bg-neutral-200')
+            document.getElementById('formEmail').classList.add('hover:bg-neutral-300')
+            document.getElementById('formEmail').classList.add('focus:bg-neutral-300')
             document.getElementById('myText').classList.add('bg-neutral-200')
             document.getElementById('myText').classList.add('hover:bg-neutral-300')
             document.getElementById('myText').classList.add('focus:bg-neutral-300')
+
+            window.location.href = "mailto:llnata@rambler.ru"
+                + "?cc=llnata@rambler.ru"
+                + "&subject=Вопрос от пользователя " + encodeURIComponent(document.getElementById('formName').value)
+                + "&body=" + encodeURIComponent(document.getElementById('myText').value);
         }
-    } else {
-        document.getElementById('formName').classList.remove('bg-red-200')
-        document.getElementById('formName').classList.remove('hover:bg-red-200')
-        document.getElementById('formName').classList.remove('focus:bg-red-200')
-        document.getElementById('formEmail').classList.remove('bg-red-200')
-        document.getElementById('formEmail').classList.remove('hover:bg-red-200')
-        document.getElementById('formEmail').classList.remove('focus:bg-red-200')
-        document.getElementById('myText').classList.remove('bg-red-200')
-        document.getElementById('myText').classList.remove('hover:bg-red-200')
-        document.getElementById('myText').classList.remove('focus:bg-red-200')
-        document.getElementById('formName').classList.add('bg-neutral-200')
-        document.getElementById('formName').classList.add('hover:bg-neutral-300')
-        document.getElementById('formName').classList.add('focus:bg-neutral-300')
-        document.getElementById('formEmail').classList.add('bg-neutral-200')
-        document.getElementById('formEmail').classList.add('hover:bg-neutral-300')
-        document.getElementById('formEmail').classList.add('focus:bg-neutral-300')
-        document.getElementById('myText').classList.add('bg-neutral-200')
-        document.getElementById('myText').classList.add('hover:bg-neutral-300')
-        document.getElementById('myText').classList.add('focus:bg-neutral-300')
-
-        window.location.href = "mailto:llnata@rambler.ru"
-            + "?cc=llnata@rambler.ru"
-            + "&subject=Вопрос от пользователя " + encodeURIComponent(document.getElementById('formName').value)
-            + "&body=" + encodeURIComponent(document.getElementById('myText').value);
-    }
-})
-
-
-function setActiveContacts() {
-    document.querySelector('.contacts_1').classList.add('_active')
-    document.querySelector('.contacts_2').classList.add('_active')
-    document.querySelector('.contacts_3').classList.add('_active')
-    document.querySelector('.contacts_4').classList.add('_active')
-    document.querySelector('.contacts_5').classList.add('_active')
-    document.querySelector('.contacts_6').classList.add('_active')
-    document.querySelector('.contacts_7').classList.add('_active')
-    document.querySelector('.contacts_8').classList.add('_active')
+    })
 }
 
-setTimeout(setActiveContacts, 200);
+if (document.querySelector('.contacts_1') !== null) {
+    function setActiveContacts() {
+        document.querySelector('.contacts_1').classList.add('_active')
+        document.querySelector('.contacts_2').classList.add('_active')
+        document.querySelector('.contacts_3').classList.add('_active')
+        document.querySelector('.contacts_4').classList.add('_active')
+        document.querySelector('.contacts_5').classList.add('_active')
+        document.querySelector('.contacts_6').classList.add('_active')
+        document.querySelector('.contacts_7').classList.add('_active')
+        document.querySelector('.contacts_8').classList.add('_active')
+    }
+
+    setTimeout(setActiveContacts, 200);
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import PortfolioForm from '../components/PortfolioForm'
 
 
 function Portfolio () {
@@ -8,6 +9,7 @@ function Portfolio () {
         <div className="scroll-smooth bg-white">
             <Header />
             <div id="first_div" className="w-full h-screen bg-white" onTouchStart={closeMenu}>
+                <PortfolioForm />
             </div>
             <Footer />
         </div>
