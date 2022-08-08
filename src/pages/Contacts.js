@@ -7,7 +7,7 @@ import {FaTelegramPlane, FaWhatsapp, FaVk, FaHeart} from "react-icons/fa";
 function Contacts () {
     return (
         <div className="scroll-smooth bg-white">
-            <div id="first_div" className="flex flex-col lg:flex-row w-full bg-neutral-800" onTouchStart={closeMenu}>
+            <div id="first_div" className="flex flex-col lg:flex-row w-full bg-violet" onTouchStart={closeMenu}>
                 <div className="w-full lg:w-1/2 bg-white p-10 lg:p-20 pt-20">
                     <div>
                         <h1 className="text-violet text-2xl lg:text-3xl contacts_1">Свяжитесь со мной</h1>
