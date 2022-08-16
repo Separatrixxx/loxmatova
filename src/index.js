@@ -53,8 +53,11 @@ if (animItems.length > 0) {
 document.getElementById('contacts_btn')?.addEventListener('click', () => {
     let reg = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/
     let address = document.getElementById('formEmail').value
-    if (document.getElementById('formName').value === "" || document.getElementById('formEmail').value === "" || document.getElementById('myText').value === "" || reg.test(address) === false) {
-        if (document.getElementById('formName').value === "") {
+    if (+document.getElementById('formName').value === 0
+        || +document.getElementById('formEmail').value === 0
+        || +document.getElementById('myText').value === 0
+        || reg.test(address) === false) {
+        if (+document.getElementById('formName').value === 0) {
             document.getElementById('formName').classList.add('bg-red-200')
             document.getElementById('formName').classList.add('hover:bg-red-200')
             document.getElementById('formName').classList.add('focus:bg-red-200')
@@ -69,7 +72,7 @@ document.getElementById('contacts_btn')?.addEventListener('click', () => {
             document.getElementById('formName').classList.add('hover:bg-neutral-300')
             document.getElementById('formName').classList.add('focus:bg-neutral-300')
         }
-        if (document.getElementById('formEmail').value === "") {
+        if (+document.getElementById('formEmail').value === 0) {
             document.getElementById('formEmail').classList.add('bg-red-200')
             document.getElementById('formEmail').classList.add('hover:bg-red-200')
             document.getElementById('formEmail').classList.add('focus:bg-red-200')
@@ -99,7 +102,7 @@ document.getElementById('contacts_btn')?.addEventListener('click', () => {
             document.getElementById('formEmail').classList.add('hover:bg-neutral-300')
             document.getElementById('formEmail').classList.add('focus:bg-neutral-300')
         }
-        if (document.getElementById('myText').value === "") {
+        if (+document.getElementById('myText').value === 0) {
             document.getElementById('myText').classList.add('bg-red-200')
             document.getElementById('myText').classList.add('hover:bg-red-200')
             document.getElementById('myText').classList.add('focus:bg-red-200')
